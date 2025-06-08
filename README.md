@@ -54,6 +54,8 @@ services:
     image: jaunger/rathole-test:stable
     environment:
       - mode=client
+    ports:
+      - "2333:2333"
     volumes:
       - /config/config.toml:/rathole/config.toml
     networks:
@@ -67,7 +69,7 @@ networks:
 
 ```toml
 [client]
-remote_addr = "server-ip"
+remote_addr = "server-ip:2333"
 #default_token = "test"
 
 [client.services.jellyfin]
