@@ -1,0 +1,7 @@
+stages: [deploy]
+
+include:
+  - project: homelab8605624/gitlab-templates
+    file: 
+      - Jobs/Docker.Publish.gitlab-ci.yml
+      - Jobs/markdownlintjob.gitlab-ci.yml
