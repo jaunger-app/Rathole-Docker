@@ -1,4 +1,4 @@
-stages: [deploy]
+stages: [.push]
 
 include:
   - project: homelab8605624/gitlab-templates
