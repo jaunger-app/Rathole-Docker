@@ -1,7 +1,15 @@
-stages: [.push]
+stages: [.push, deploy]
 
 include:
   - project: homelab8605624/gitlab-templates
     file: 
       - Jobs/Docker.Publish.gitlab-ci.yml
       - Jobs/markdownlintjob.gitlab-ci.yml
+
+mirror_to_github:
+  stage: deploy
+  script:
+    - git config --global user.name "GitLab CI"
+    - git config --global user.email "ci@gitlab.com"
+    - git remote add github https://jaunger-app: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@github.com/jaunger-app/Rathole-Docker.git
+    - git push --mirror github
