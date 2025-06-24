@@ -11,5 +11,5 @@ mirror_to_github:
   script:
     - git config --global user.name "GitLab CI"
     - git config --global user.email "ci@gitlab.com"
-    - git remote add github "$GITHUB_REMOTE_URL"
+    - git remote add github $GITHUB_REMOTE_URL
     - git push --mirror github
